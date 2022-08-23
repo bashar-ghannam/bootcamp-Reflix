@@ -8,6 +8,8 @@ class Movie extends Component {
     }
     if (this.props.getBudget() >= 5) {
       this.props.toggleRented(this.props.movie.id);
+    } else {
+      alert('You do not have enough budget');
     }
   };
   render() {

@@ -32,7 +32,10 @@ body {
 
 .boxs {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px 20px;
 }
 
 .boxs a {
