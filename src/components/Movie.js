@@ -3,7 +3,12 @@ import { Link } from 'react-router-dom';
 
 class Movie extends Component {
   toggleRented = () => {
-    this.props.toggleRented(this.props.movie.id);
+    if (this.props.movie.isRented) {
+      this.props.toggleRented(this.props.movie.id);
+    }
+    if (this.props.getBudget() >= 5) {
+      this.props.toggleRented(this.props.movie.id);
+    }
   };
   render() {
     let movie = this.props.movie;

@@ -37,7 +37,7 @@ class Catalog extends Component {
     let count = 0;
     this.props.movies.forEach((movie) => {
       if (movie.isRented) {
-        count += 3;
+        count += 5;
       }
     });
     return 15 - count;
@@ -71,6 +71,7 @@ class Catalog extends Component {
                   movie={movie}
                   key={index}
                   toggleRented={this.props.toggleRented}
+                  getBudget={this.getBudget}
                 />
               ))}
           </div>
