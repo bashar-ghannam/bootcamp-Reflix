@@ -5,8 +5,7 @@ class Movie extends Component {
   toggleRented = () => {
     if (this.props.movie.isRented) {
       this.props.toggleRented(this.props.movie.id);
-    }
-    if (this.props.getBudget() >= 5) {
+    } else if (this.props.getBudget() >= 5) {
       this.props.toggleRented(this.props.movie.id);
     } else {
       alert('You do not have enough budget');
