@@ -79,14 +79,14 @@ class App extends Component {
   }
 
   toggleRented = (movieId) => {
-    let currentMovie = this.state.movies;
+    let currentMovie = [...this.state.movies];
     currentMovie.find((movie) => movieId === movie.id).isRented =
       !currentMovie.find((movie) => movieId === movie.id).isRented;
     this.setState({ movies: currentMovie });
   };
 
   getSearchedItems = (str) => {
-    let currentMovie = this.state.movies;
+    let currentMovie = [...this.state.movies];
     if (str !== '') {
       currentMovie = currentMovie.filter((movie) =>
         movie.title.toLowerCase().includes(str.trim().toLowerCase())
@@ -123,9 +123,9 @@ class App extends Component {
           <Route
             path="/movies/:id"
             exact
-            render={({ match }) => (
-              <MovieDetail match={match} movies={this.state.movies} />
-            )}
+            render={({ match }) => {
+              return <MovieDetail match={match} movies={this.state.movies} />
+            }}
           />
         </div>
       </Router>
